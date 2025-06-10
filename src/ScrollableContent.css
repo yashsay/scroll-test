@@ -1,32 +1,45 @@
+/*
+  ScrollableContent styles
+  - Uses 'overflow: auto' for native scrolling
+  - Customizes scrollbars for Webkit browsers (Chrome, Safari, Edge)
+  - Uses 'scrollbar-width' and 'scrollbar-color' for Firefox
+  - Ensures accessibility and fallback to native scrollbars if custom styles are unsupported
+*/
 .scrollable-content {
+  /* Container setup */
   position: relative;
   width: 100%;
   height: 400px;
-  overflow: auto;
-  background: #000;
-  color: #fff;
+  overflow: auto; /* Native scrolling, best for performance and accessibility */
+  background: #000; /* Black background as requested */
+  color: #fff;      /* White text as requested */
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-/* Overlay scrollbar styles for Webkit browsers */
+/* Webkit browsers (Chrome, Safari, Edge) scrollbar customization */
 .scrollable-content::-webkit-scrollbar {
-  width: 12px;
-  background: transparent;
-  position: absolute;
+  width: 12px; /* Custom width for scrollbar */
+  background: transparent; /* Transparent track background */
 }
 .scrollable-content::-webkit-scrollbar-thumb {
-  background: #fff;
-  border-radius: 8px;
-  border: 3px solid rgba(0,0,0,0);
-  background-clip: padding-box;
+  background: #fff; /* White thumb for visibility on black background */
+  border-radius: 8px; /* Rounded corners for thumb */
+  border: 3px solid rgba(0,0,0,0); /* Padding effect for thumb */
+  background-clip: padding-box; /* Ensures border is transparent */
 }
 .scrollable-content::-webkit-scrollbar-track {
-  background: transparent;
+  background: transparent; /* Transparent track for overlay effect */
 }
 
-/* Overlay scrollbar for Firefox */
+/* Firefox scrollbar customization */
 .scrollable-content {
-  scrollbar-width: thin;
-  scrollbar-color: #fff transparent;
+  scrollbar-width: thin; /* Thin scrollbar for modern look */
+  scrollbar-color: #fff transparent; /* White thumb, transparent track */
 }
+
+/*
+  Note:
+  - Native scrollbars are used if custom properties are unsupported.
+  - This approach is ideal for cross-browser compatibility and accessibility.
+*/
