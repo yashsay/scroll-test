@@ -1,0 +1,32 @@
+.scrollable-content {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: auto;
+  background: #000;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Overlay scrollbar styles for Webkit browsers */
+.scrollable-content::-webkit-scrollbar {
+  width: 12px;
+  background: transparent;
+  position: absolute;
+}
+.scrollable-content::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 8px;
+  border: 3px solid rgba(0,0,0,0);
+  background-clip: padding-box;
+}
+.scrollable-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Overlay scrollbar for Firefox */
+.scrollable-content {
+  scrollbar-width: thin;
+  scrollbar-color: #fff transparent;
+}

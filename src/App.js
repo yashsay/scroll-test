@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import ScrollableContent from './ScrollableContent';
 
 function App() {
   return (
@@ -18,6 +19,12 @@ function App() {
           Learn React
         </a>
       </header>
+      <h1>Scrollable Content Demo</h1>
+      <ScrollableContent>
+        {[...Array(30)].map((_, i) => (
+          <p key={i}>This is line {i + 1} of scrollable content.</p>
+        ))}
+      </ScrollableContent>
     </div>
   );
 }
