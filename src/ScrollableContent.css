@@ -4,6 +4,7 @@
   - Customizes scrollbars for Webkit browsers (Chrome, Safari, Edge)
   - Uses 'scrollbar-width' and 'scrollbar-color' for Firefox
   - Ensures accessibility and fallback to native scrollbars if custom styles are unsupported
+  - Forces overlay scrollbar behavior for Windows Chrome using 'scrollbar-gutter: stable overlay' (supported in modern browsers)
 */
 .scrollable-content {
   /* Container setup */
@@ -15,6 +16,8 @@
   color: #fff;      /* White text as requested */
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  /* Overlay scrollbar for supported browsers (Chrome 94+, Edge 94+, Firefox 93+) */
+  scrollbar-gutter: stable overlay;
 }
 
 /* Webkit browsers (Chrome, Safari, Edge) scrollbar customization */
@@ -41,5 +44,5 @@
 /*
   Note:
   - Native scrollbars are used if custom properties are unsupported.
-  - This approach is ideal for cross-browser compatibility and accessibility.
+  - 'scrollbar-gutter: stable overlay' is the best cross-platform way to request overlay scrollbars in modern browsers.
 */
