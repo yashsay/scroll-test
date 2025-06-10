@@ -17,7 +17,7 @@
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   /* Overlay scrollbar for supported browsers (Chrome 94+, Edge 94+, Firefox 93+) */
-  scrollbar-gutter: stable overlay;
+  scrollbar-gutter: overlay;
 }
 
 /* Webkit browsers (Chrome, Safari, Edge) scrollbar customization */
